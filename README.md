@@ -1,38 +1,76 @@
-# Tarot Card Reading App
+# Mystic Tarot Reading
 
-A simple web-based Tarot card reading application that provides single-card and three-card readings with interpretations.
+An interactive web-based Tarot card reading application featuring the Major Arcana cards with detailed interpretations and beautiful card designs.
 
 ## Features
 
-- Single card readings
-- Three card spreads
-- Interactive card flipping
-- Card interpretations
-- Responsive design
-
-## Setup
-
-1. Clone the repository:
-```bash
-git clone [your-repository-url]
-cd tarot-reading-app
-```
-
-2. Open `index.html` in your web browser to start using the application.
-
-## Usage
-
-1. Choose between a single card or three card reading
-2. Click on the cards to flip them and reveal their meanings
-3. Use the "New Reading" button to start over
+- Complete Major Arcana deck (22 cards)
+- Single and Three Card reading options
+- Interactive card flipping animation
+- Detailed card interpretations
+- Beautiful SVG card designs
+- Responsive layout
+- Modern UI/UX
 
 ## Technologies Used
 
 - HTML5
 - CSS3
-- JavaScript
-- SVG Graphics
+- JavaScript (Vanilla)
+- SVG for card designs
+
+## Getting Started
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/mystic-tarot.git
+```
+
+2. Navigate to the project directory:
+```bash
+cd mystic-tarot
+```
+
+3. Start a local server:
+```bash
+python3 -m http.server 8000
+```
+
+4. Open your browser and visit:
+```
+http://localhost:8000
+```
+
+## Project Structure
+
+```
+mystic-tarot/
+├── index.html          # Main HTML file
+├── styles.css          # CSS styles
+├── tarot.js           # JavaScript logic
+├── card-back.svg      # Card back design
+├── fool.svg           # Example card front
+└── README.md          # Project documentation
+```
+
+## Card Features
+
+Each card includes:
+- Card name
+- Card number
+- Key meanings
+- Detailed interpretation
+- Beautiful SVG illustration
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-MIT License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Traditional Tarot card meanings and interpretations
+- SVG design inspiration from classic Tarot decks

@@ -84,12 +84,39 @@ h1 {
     background: url('card-back.svg') center/cover;
 }
 
+.card-interpretation {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.card-interpretation h3 {
+    color: #ffd700;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+}
+
+.card-meaning {
+    color: #e0e0e0;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.card-reading {
+    color: #ffffff;
+    line-height: 1.8;
+    font-size: 1.1em;
+}
+
 .interpretation {
     max-width: 800px;
     margin: 40px auto;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
     line-height: 1.6;
 }
 

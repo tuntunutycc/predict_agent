@@ -1,14 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="350" viewBox="0 0 200 350">
-    <defs>
-        <pattern id="pattern" width="20" height="20" patternUnits="userSpaceOnUse">
-            <circle cx="10" cy="10" r="1" fill="#9b7e4b" opacity="0.5"/>
-        </pattern>
-    </defs>
-    <rect width="100%" height="100%" fill="#2a1b3d"/>
-    <rect width="100%" height="100%" fill="url(#pattern)"/>
-    <circle cx="100" cy="175" r="60" fill="none" stroke="#9b7e4b" stroke-width="2"/>
-    <path d="M100 115 L100 235 M40 175 L160 175" stroke="#9b7e4b" stroke-width="2"/>
-    <circle cx="100" cy="175" r="40" fill="none" stroke="#9b7e4b" stroke-width="1"/>
-    <text x="100" y="50" text-anchor="middle" fill="#9b7e4b" font-family="Georgia" font-size="16">MYSTIC</text>
-    <text x="100" y="300" text-anchor="middle" fill="#9b7e4b" font-family="Georgia" font-size="16">TAROT</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="350" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="200" height="350" fill="#2a2a4a" rx="10"/>
+    
+    <!-- Decorative border -->
+    <rect x="10" y="10" width="180" height="330" fill="none" stroke="#ffd700" stroke-width="2" rx="8"/>
+    
+    <!-- Mystical pattern -->
+    <g fill="#ffffff" opacity="0.1">
+        <!-- Moon symbols -->
+        <circle cx="50" cy="50" r="15"/>
+        <circle cx="150" cy="50" r="15"/>
+        <circle cx="50" cy="300" r="15"/>
+        <circle cx="150" cy="300" r="15"/>
+        
+        <!-- Star pattern -->
+        <path d="M100,175 L110,190 L125,195 L115,210 L120,225 L100,215 L80,225 L85,210 L75,195 L90,190 Z"/>
+        
+        <!-- Mystical lines -->
+        <path d="M40,100 Q100,150 160,100" stroke="#ffffff" stroke-width="1" fill="none"/>
+        <path d="M40,250 Q100,200 160,250" stroke="#ffffff" stroke-width="1" fill="none"/>
+    </g>
+    
+    <!-- Corner decorations -->
+    <g fill="#ffd700" opacity="0.3">
+        <!-- Top left -->
+        <path d="M20,20 L30,20 L30,30 L20,30 Z"/>
+        <!-- Top right -->
+        <path d="M170,20 L180,20 L180,30 L170,30 Z"/>
+        <!-- Bottom left -->
+        <path d="M20,320 L30,320 L30,330 L20,330 Z"/>
+        <!-- Bottom right -->
+        <path d="M170,320 L180,320 L180,330 L170,330 Z"/>
+    </g>
 </svg>
