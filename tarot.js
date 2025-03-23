@@ -135,14 +135,15 @@ const tarotDeck = [
 ];
 
 let currentReading = [];
+let cardDisplay, interpretation;
 
 // Initialize the app
 document.addEventListener('DOMContentLoaded', () => {
     const singleCardBtn = document.getElementById('singleCard');
     const threeCardBtn = document.getElementById('threeCard');
     const newReadingBtn = document.getElementById('newReading');
-    const cardDisplay = document.getElementById('cardDisplay');
-    const interpretation = document.getElementById('interpretation');
+    cardDisplay = document.getElementById('cardDisplay');
+    interpretation = document.getElementById('interpretation');
 
     singleCardBtn.addEventListener('click', () => startReading(1));
     threeCardBtn.addEventListener('click', () => startReading(3));
@@ -182,14 +183,7 @@ function createCardElement(card, index) {
     const cardFront = document.createElement('div');
     cardFront.className = 'card-front';
     
-    // Add temporal label for three card reading
-    if (currentReading.length === 3) {
-        const timeLabels = ['Past', 'Present', 'Future'];
-        const timeLabel = document.createElement('div');
-        timeLabel.className = 'time-label';
-        timeLabel.textContent = timeLabels[index];
-        cardFront.appendChild(timeLabel);
-    }
+    // Card display shows only the name
     
     const cardName = document.createElement('div');
     cardName.className = 'card-name';
@@ -208,7 +202,7 @@ function createCardElement(card, index) {
     cardElement.addEventListener('click', () => {
         if (!cardElement.classList.contains('flipped')) {
             cardElement.classList.add('flipped');
-            setTimeout(() => showInterpretation(), 600);
+            showInterpretation();
         }
     });
 }
@@ -218,12 +212,7 @@ function showInterpretation() {
     if (currentReading.every(card => 
         document.querySelector(`[data-card="${card.name}"]`)?.classList.contains('flipped'))) {
         const interpretationText = currentReading.map((card, index) => {
-            const timeLabel = currentReading.length === 3 ? 
-                ['Past', 'Present', 'Future'][index] : '';
-            const timeLabelHtml = timeLabel ? 
-                `<h3 class="time-position">${timeLabel}</h3>` : '';
             return `<div class="card-interpretation">
-                ${timeLabelHtml}
                 <h3>${card.name}</h3>
                 <p class="card-meaning"><strong>Key Meanings:</strong> ${card.meaning}</p>
                 <p class="card-reading"><strong>Detailed Reading:</strong> ${card.reading}</p>
