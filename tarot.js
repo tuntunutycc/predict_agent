@@ -181,7 +181,20 @@ function createCardElement(card, index) {
     
     const cardFront = document.createElement('div');
     cardFront.className = 'card-front';
-    cardFront.textContent = card.name;
+    
+    // Add temporal label for three card reading
+    if (currentReading.length === 3) {
+        const timeLabels = ['Past', 'Present', 'Future'];
+        const timeLabel = document.createElement('div');
+        timeLabel.className = 'time-label';
+        timeLabel.textContent = timeLabels[index];
+        cardFront.appendChild(timeLabel);
+    }
+    
+    const cardName = document.createElement('div');
+    cardName.className = 'card-name';
+    cardName.textContent = card.name;
+    cardFront.appendChild(cardName);
     
     const cardBack = document.createElement('div');
     cardBack.className = 'card-back';
@@ -204,13 +217,18 @@ function createCardElement(card, index) {
 function showInterpretation() {
     if (currentReading.every(card => 
         document.querySelector(`[data-card="${card.name}"]`)?.classList.contains('flipped'))) {
-        const interpretationText = currentReading.map(card => 
-            `<div class="card-interpretation">
+        const interpretationText = currentReading.map((card, index) => {
+            const timeLabel = currentReading.length === 3 ? 
+                ['Past', 'Present', 'Future'][index] : '';
+            const timeLabelHtml = timeLabel ? 
+                `<h3 class="time-position">${timeLabel}</h3>` : '';
+            return `<div class="card-interpretation">
+                ${timeLabelHtml}
                 <h3>${card.name}</h3>
                 <p class="card-meaning"><strong>Key Meanings:</strong> ${card.meaning}</p>
                 <p class="card-reading"><strong>Detailed Reading:</strong> ${card.reading}</p>
-            </div>`
-        ).join('');
+            </div>`;
+        }).join('');
         
         interpretation.innerHTML = interpretationText;
     }
