@@ -183,8 +183,7 @@ function createCardElement(card, index) {
     const cardFront = document.createElement('div');
     cardFront.className = 'card-front';
     
-    // Card display shows only the name
-    
+    // Card display shows name and time period
     const cardName = document.createElement('div');
     cardName.className = 'card-name';
     cardName.textContent = card.name;
@@ -192,6 +191,8 @@ function createCardElement(card, index) {
     
     const cardBack = document.createElement('div');
     cardBack.className = 'card-back';
+    
+    // No time period display needed
     
     cardElement.appendChild(cardFront);
     cardElement.appendChild(cardBack);
